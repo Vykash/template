@@ -14,5 +14,557 @@ BlankSlate WordPress Theme © 2011-2017 TidyThemes
 BlankSlate is distributed under the terms of the GNU GPL
 */
 
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{font-size:100%;font:inherit;padding:0;border:0;margin:0;vertical-align:baseline}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}.clear{clear:both}
-.sticky{}.bypostauthor{}.wp-caption{}.wp-caption-text{}.gallery-caption{}.alignright{}.alignleft{}.aligncenter{}.screen-reader-text{clip:rect(1px, 1px, 1px, 1px);position:absolute !important}
+/* Regole generali*/
+
+body{
+    color: #515151;
+    font-family: 'Varela Round', sans-serif;
+}
+.color_pink{
+    
+    color: #f33176;
+    
+}
+.color_black{
+    
+}
+.color_white{
+    color: #fff;
+}
+
+.color_softgrey{
+    color: #a7a7a7;
+}
+
+.bg_pink{
+    
+    background-color: #f33176;
+}
+.bg_black{
+    
+    background-color: #515151;
+    
+}
+
+.bg_azure{
+    background-color: #7cd3ce;
+}
+
+.btn{
+    color: #515151;
+}
+.btn:hover{
+    background-color: #f33176;
+}
+
+a{
+    color: #515151;
+    text-decoration: none;
+}
+a:hover, a:active{
+    color: #f33176;
+    transition: all 0.6s ease-in-out;
+}
+
+.copyright a:hover{
+    color: #f33176;
+    transition: all 0.6s ease-in-out;
+}
+
+.rotateWrapper{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.rotate90{
+    
+    transform: rotate(-90deg);
+    white-space: nowrap;
+    position: absolute;
+    margin-top: 13px;
+    line-height: 50px;
+    display: inline-block;
+    width: 100%;
+    top: 75px;
+}
+
+
+
+.container{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.container_large{
+    width: 1440px;
+    margin: 0 auto;
+}
+
+
+
+
+/*HEADER*/
+#main-header h1{
+    
+    font-size: 90px
+}
+
+#main-header h2{
+    font-size: 24px;
+}
+.header-box{
+    height: 50vh;
+    padding-top: 10vh;
+}
+.header-box .container_large{
+    height: 100%;
+}
+.header-triangle{
+    
+    height: 40vh;
+    
+}
+
+.header-triangle svg polygon{
+    fill: #f33176;
+}
+
+.small-col, .center-col{
+    display: inline-block;
+    height: 100%;
+    vertical-align: top;
+}
+
+.small-col{
+    width: 50px;
+    color: #fff;
+}
+
+.menu-toggle{
+    width: 100%;
+    text-align: center;
+    font-size: 25px;
+    cursor: pointer;
+}
+.menu-toggle:hover{
+    transform: scale(1.3);
+    transition: all 0.6s ease-in-out;
+}
+.center-col{
+    width: calc(100% - 109px);
+}
+
+.center-col-wrapper{
+    padding: 90px 90px;
+}
+
+.logo{
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    text-align: center;
+    padding-bottom: 5px;
+    margin-bottom: 50px;
+}
+
+/*Barra di navigazione*/
+.navigation-bar {
+    height: 100vh;
+    width: 24%;
+    right: -800px;
+    background-color: #515151;
+    position: fixed;
+    z-index: 100;
+    padding: 100;
+    transform: skewX(10deg);
+    transition: all 0.6s ease-in-out;
+}
+.navigation-toggle{
+    
+    right: -92px;
+}
+.top-nav-container{
+    width: 100%;
+    height: 100px;
+    transform: skewX(-10deg);
+    display: inline-block
+}
+.skew-close {
+        
+    transform: rotate(77deg);
+    height: 100%;
+    width: 25%;
+    margin-left: -80px;
+    left: 15px;
+    margin-top: 70px;
+    position: relative;
+    display: inline-block;
+    font-size: 18px;
+}
+.close-icon{
+    padding-right: 15px;
+    font-size: 22px;
+    display: inline-block;
+    transition: all 0.7s ease-in-out;
+}
+
+.close-icon:hover{
+    transform: scale(1.7);
+    color: #f33176;
+    transition: all 0.7s ease-in-out;
+    cursor: pointer;
+}
+.logo-square.nav-logo{
+    display: inline-block;
+    text-align: right;
+    width: 80%;
+    position: relative;
+    top: 30px;
+    left: 15px;
+}
+
+.logo-square.nav-logo p{
+    font-size: 30px;
+}
+
+.logo-square.nav-logo span{
+    margin-top: 15px;
+    font-size: 22px;
+    display: block;
+}
+.nav-list{
+    width: 78%;
+    height: 60%;
+    margin-top: 95px;
+    transform: skewX(-10deg);
+}
+.navbar{
+    width: 100%;
+    text-align: right;
+}
+.navbar ul li{
+    padding-bottom: 25px;
+    font-size: 18px;
+}
+.nav-list .navbar a{
+    color: #fff;
+}
+.navbar ul li a:hover{
+    color: #f33176;
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+}
+
+
+/**GRIGLIA PORTFOLIO*/
+
+.item{
+    width: 50%;
+    position: relative;
+    height: 150px;
+    margin-bottom: 150px;
+    
+}
+
+.item .titleWrapper{
+    position: absolute;
+    width: 50px;
+    height: 100%;
+}
+.item-right{
+    margin-left: calc(50% - 40px);
+}
+
+.item-left{
+    margin-right: calc(50% - 40px);
+}
+
+.item img{
+    max-width: 100%;
+    box-shadow: 10px 10px 0px #ccc;
+    opacity: 0;
+}
+
+
+.item-bg{
+    position: absolute;
+    bottom: 0;
+    box-shadow: 10px 10px 0px #ccc;
+    max-height: 450px;
+    background-size: cover;
+    background-position: center center;
+}
+.item .rotateWrapper{
+    position: relative;
+}
+
+.item-right .titleWrapper{
+    right: -65px;
+}
+
+.item-left .titleWrapper{
+    left: -65px;
+}
+
+.item .rotate90{
+    bottom: 0px;
+    top: auto;
+}
+
+/*FOOTER*/
+.footer-triangle{
+    height: 40vh;
+}
+
+.footer-triangle svg polygon{
+    fill: #515151;
+}
+.footer-box{
+    height: 25vh;
+    padding-bottom: 8vh;
+}
+
+
+.footer-box span{
+    display: inline-block;
+    margin-top: 50px;
+    font-size: 17px;
+}
+.footer-cont{
+    text-align: center;
+    position: relative
+}
+.footer-cont h3{
+    font-size: 20px;
+    margin-top: 50px;
+}
+.footer-logo{
+    
+    margin: 0 auto;
+}
+
+.copyright{
+    color: #a7a7a7;
+}
+.copyright a{
+    color: #fff;
+}
+.copyright a:after{
+    content:"~";
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.copyright a:last-of-type:after{
+    display: none;
+}
+
+.social-logos i{
+    color: #a7a7a7;
+    font-size: 22px;
+    margin-top: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.f-center-col{
+    width: 90%;
+    display: inline-block;
+    height: 100%;
+}
+
+.f-small-col{
+    width: 50px;
+    height: 238px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.f-small-col .rotate90{
+    top: 210px;
+    font-size: 20px;
+    margin: 0 auto;
+    transition: all 0.8s ease-in-out;
+}
+.f-small-col .rotate90 div:hover{
+    color: #f33176;;
+}
+.f-small-col .rotate90:hover{
+    top: 160px;
+    transition: all 0.8s ease-in-out;
+    cursor: pointer;
+}
+
+.f-small-col i{
+    font-size: 15px;
+    margin-left: 25px;
+}
+
+/*------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------
+PAGINA PORTFOLIO
+--------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------/*
+
+/*HEADER COLORE DIVERSO*/
+
+#main-header2 h2{
+    
+    font-size: 68px;
+    margin-top: 35px;
+}
+
+.header-box2{
+    height: 40vh;
+    padding-top: 10vh;
+}
+
+.header-triangle{
+    height: 30vh;
+}
+
+#main-header2 .header-triangle svg polygon{
+    fill: #7cd3ce;
+}
+.center-col-wrapper2{
+    padding: 90px 90px;
+}
+.center-col-wrapper2 h1{
+    font-size: 90px;
+}
+.center-col-wrapper2 span{
+    margin-top: 35px;
+    font-size: 22px;
+    display: inline-block;
+}
+
+.center-col-wrapper2 span a{
+    color: #fff;
+}
+.center-col-wrapper2 span::after{
+    content: "/";
+    margin-left: 35px;
+    margin-right: 35px;
+}
+
+.center-col-wrapper2 span:last-child::after{
+    display: none;
+}
+.center-col-wrapper i{
+    font-size: 15px;
+}
+.center-col-wrapper2 .fa-arrow-left{
+    margin-right: 35px;
+}
+
+.center-col-wrapper2 .fa-arrow-right{
+    margin-left: 35px;
+}
+
+
+/*CONTENITORE PRINCIPALE*/
+.portfolio-container{
+    margin-top: -160px;
+}
+
+/*COLONNA IMMAGINI*/
+.left-col{
+    
+    width: 40%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.portfolio-item{
+    width: 100%;
+    position: relative;
+}
+.portfolio-item .rotate90{
+    font-size: 20px;
+}
+.portfolio-item.right{
+    margin-left: 50px;
+    margin-top: -60px;
+}
+
+.portfolio-item.left{
+    margin-left: 0px;
+    margin-top: -80px;
+}
+.portfolio-item .titleWrapper{
+    position: absolute;
+    width: 50px;
+    height: 100%;
+}
+.portfolio-item.right .titleWrapper{
+    right: -10px;
+}
+
+.portfolio-item.left .titleWrapper{
+    left: -50px;
+    bottom: 10px;
+}
+.portfolio-item .rotate90{
+    bottom: 0px;
+    top: auto;
+}
+
+.pic-wrapper{
+    width: 90%;
+    
+}
+
+.pic-wrapper img{
+    max-width: 100%;
+    box-shadow: 10px 10px 0px rgba(51,51,51,0.2);
+}
+
+/*COLONNA TESTO*/
+.right-col{
+    width: 55%;
+    display: inline-block;
+    height: 1000px;
+    vertical-align: top;
+    margin-left: 20px;
+    margin-top: 80px;
+}
+
+.rightTitle{
+    color: aqua;
+}
+
+.right-col-wrapper{
+    padding: 50px 120px;
+    margin-left: 50px;
+}
+
+.textContainer{
+    margin-bottom: 55px;
+}
+
+.textContainer div{
+    font-size: 25px;
+    line-height: 30px;
+}
+
+.textContainer p{
+    font-size: 17px;
+    line-height: 30px;
+}
+
+.textContainer span{
+    margin-top: 5px;
+    display: block;
+    font-size: 17px;
+}
+
+.textContainer a{
+    text-decoration: underline;
+}
+
+/*HOVERS*/
+
+.center-col-wrapper2 a:hover{
+    transition: all 0.6s ease-in-out;
+    color: #515151;
+}
