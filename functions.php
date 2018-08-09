@@ -65,3 +65,19 @@ return count( $comments_by_type['comment'] );
 return $count;
 }
 }
+
+function create_post_type() {
+  register_post_type( 'Portfolio',
+    array(
+      'labels' => array(
+        'name' => __( 'Portfolios' ),
+        'singular_name' => __( 'Portfolio' )
+      ),
+      'public' => true,
+      'taxonomies'  => array( 'category' ),
+      'has_archive' => true,
+      'supports' => array( 'title', 'editor', 'thumbnail', ),
+    )
+  );
+}
+add_action( 'init', 'create_post_type' );
