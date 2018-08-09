@@ -32,25 +32,26 @@
             </div>
             <div class="nav-list">
                 <nav class="navbar">
-                    <ul>
+                    <!-- <ul>
                         <li><a href="index.html">Home</a></li>
-
+                    
                         <li><a href="portfolio.html">.Portfolio</a></li>
-
+                    
                         <li><a href="#">Blog</a></li>
-
+                    
                         <li><a href="#">.Sample Pages</a></li>
-
+                    
                         <li><a href="#">Shop</a></li>
-
+                    
                         <li><a href="#">Contact</a></li>
-
+                    
                         <li><a href="#">Language</a></li>
-
+                    
                         <li><a href="#">Buy Now</a></li>
-
+                    
                         <li><a href="#">Free</a></li>
-                    </ul>
+                    </ul> -->
+                    <?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
                 </nav>
             </div>
         </div>
@@ -97,4 +98,3 @@
 
 
 
-<?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
