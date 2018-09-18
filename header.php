@@ -15,19 +15,29 @@
 
 <?php wp_head(); ?>
 </head>
+
+<?php
+    
+    if(get_post_type() == 'portfolio'){
+        $id_header = 'portfolio-header';
+    }else{
+        $id_header = 'main-header';
+    }
+    
+?>
 <body <?php body_class(); ?>>
 
-<header id="main-header">
+<header id="<?=$id_header?>">
         <div class="navigation-bar color_white">
             <div class="top-nav-container">
                 <div class="skew-close">
                     <span class="close-icon">x</span>
-                    <span>Close</span>
+                    <span><?php _e('Close','qusq') ?></span>
                 </div>
                 <div class="logo-square nav-logo">
                     <p>QU</p>
                     <p>SQ</p>
-                    <span class="secondary-font font-5">Unique Portfolio</span>
+                    <span class="secondary-font font-5"><?php bloginfo('description') ?></span>
                 </div>
             </div>
             <div class="nav-list">
@@ -62,22 +72,18 @@
                         QU<br>SQ
                     </div>
                     <div class="rotateWrapper">
-                        <div class="rotate90 menu_items">Unique Portfolio</div>
+                        <div class="rotate90 menu_items"><?php bloginfo('description') ?></div>
                     </div>
                 </div>
                 <div class="center-col">
                     <div class="center-col-wrapper">
-                        <h1>
-                            When <span class="color_white">Love</span><br> &amp; <span class="color_white">Passion</span> meet
-                            <p class="titolo-2">beautiful<span class="color_white"> things</span> start to<span class="color_white"> work</span>!</p>
-                        </h1>
-                        <h2 class="color_white">You don't believe?</h2>
+                        
                     </div>
                 </div>
                 <div class="small-col">
                     <div class="menu-toggle fas fa-bars"></div>
                     <div class="rotateWrapper">
-                        <div class="rotate90 menu_items">Menu</div>
+                        <div class="rotate90 menu_items"><?php _e('Menu','qusq') ?></div>
                     </div>
                 </div>
 
