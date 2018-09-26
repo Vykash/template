@@ -9,64 +9,61 @@
     $work = get_field('work_done');
     $preview = get_field('preview');
     $colore_header = get_field('colore_header');
+
+    //ottengo la galleria
+    $immagine = get_field('immagine');    
+    $str1 = str_replace('>','#', str_replace('<','#',$immagine));
+    $str2 = str_replace('src="','**%%',$str1);
+    $str3 = str_replace('" class','%%**',$str2);
+                                        
+    $stringhe_grezze = explode('**', $str3);
+                        
+    $srcS = array();  
+    foreach($stringhe_grezze as $stringa){
+        if(stripos($stringa,'%%') !== false){
+            $srcS[] = str_replace('%%','',$stringa);
+        }
+    }
     
     
 ?>
 <div class="container portfolio-container">
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-<!-- <div class="left-col">
-            <article class="portfolio-item right">
-                <div class="titleWrapper">
-                    <div class="rotateWrapper">
-                        <div class="rotate90">
-                            <span class="title">Cover</span>
-                        </div>
-                    </div>
+<div class="left-col">
+   <?php 
+    $x = 0;
+    foreach($srcS as $src): 
+    if($x == 0){
+        $direzione = right;
+    }else if($x == 1){
+        $direzione = left;
+    }
+    ?>
+    
+    <article class="portfolio-item <?=$direzione?>">
+        <div class="titleWrapper">
+            <div class="rotateWrapper">
+                <div class="rotate90">
+                    <span class="title">Cover</span>
                 </div>
-                <div class="pic-wrapper">
-                    <img src="img/pillola.jpg">
-                </div>
-            </article>
-            <article class="portfolio-item left">
-                <div class="titleWrapper">
-                    <div class="rotateWrapper">
-                        <div class="rotate90">
-                            <span class="title">Back</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="pic-wrapper">
-                    <img src="img/ragazza.jpg">
-                </div>
-            </article>
-            <article class="portfolio-item right">
-                <div class="titleWrapper">
-                    <div class="rotateWrapper">
-                        <div class="rotate90">
-                            <span class="title">Front View</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="pic-wrapper">
-                    <img src="img/sgolf.jpg">
-                </div>
-            </article>
-            <article class="portfolio-item left">
-                <div class="titleWrapper">
-                    <div class="rotateWrapper">
-                        <div class="rotate90">
-                            <span class="title">Space Ship</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="pic-wrapper">
-                    <img src="img/smallmask.png">
-                </div>
-            </article>
-
-        </div> -->
-        <div class="right-col">
+            </div>
+        </div>
+        <div class="pic-wrapper">
+            <img src="<?=$src?>">
+        </div>
+    </article>
+    <?php 
+    if($x == 1){
+        $x = 0;
+    }else{
+        $x++;
+    }
+    endforeach; ?>
+</div>
+        
+        
+    <div class="right-col">
             <div class="right-col-wrapper">
                 <div class="textContainer">
                     <div class="rightTitle">
@@ -76,7 +73,7 @@
 
                 <div class="textContainer">
 
-                    <?php the_content() ?>
+                    <?php the_content(); ?>
                     
                 </div>
 
