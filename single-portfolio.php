@@ -35,9 +35,9 @@
     $x = 0;
     foreach($srcS as $src): 
     if($x == 0){
-        $direzione = right;
+        $direzione = 'right';
     }else if($x == 1){
-        $direzione = left;
+        $direzione = 'left';
     }
     ?>
     
