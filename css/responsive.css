@@ -1,7 +1,8 @@
-/*@media(max-width: 1440px){
-RIDURRE CONTAINER, TO DO LIST.
-}*/
-
+@media(max-width: 1440px){
+    .container_large{
+        width: 1100px;
+    }
+}
 @media(max-width: 1200px){
     
     /*Homepage + Navbar*/
@@ -82,7 +83,14 @@ RIDURRE CONTAINER, TO DO LIST.
         width: 700px;
     }
     .container{
-        width: 650px;
+        width: 700px;
+    }
+    
+    .container_small{
+        width: 700px;
+    }
+    .portfolio-page-3 .container{
+        width: 700px;
     }
     .header-box{
         padding-top: 5vh;
@@ -92,5 +100,380 @@ RIDURRE CONTAINER, TO DO LIST.
     }
     .navigation-bar{
         padding: 70px;
+    }
+    .header-triangle{
+        margin-top: -1px;
+    }
+    .item-right {
+    margin-left: 105px;
+    }
+    .item-left {
+    margin-left: 20px;
+    }
+    .item{
+        width: 80%;
+        margin-bottom: 200px;
+    }
+    .f-center-col{
+        width: 100%;
+    }
+    /*Rimuovo il back to top su mobile*/
+    .f-small-col{
+        display: none;
+    }
+    /*Portfolio*/
+    .single-portfolio #main-header .center-col-wrapper{
+        padding: 50px 50px;
+    }
+    .single-portfolio #main-header h2 {
+    font-size: 35px;
+    }
+    .portfolio-container{
+        text-align: center;
+    }
+    .left-col{
+        width: 60%;
+    }
+    .portfolio-item.left .titleWrapper{
+        left: -100px;
+    }
+    
+    .right-col-wrapper{
+        padding: 0;
+        margin: 0;
+    }
+    .portfolio-page-1 .right-col{
+        width: 100%;
+        margin-top: 80px;
+        margin-left: 0px;
+    }
+    .portfolio-page-2 .right-col{
+        display: block;
+    }
+    .portfolio-page-2 .left-col{
+        width: 100%;
+    }
+    .portfolio-page-2 .left-col-wrapper{
+        padding: 150px 0px;
+        margin-right: 0px
+    }
+    .portfolio-page-2 #main-header h1{
+        font-size: 68px;
+    }
+    .portfolio-page-2 .right-col{
+        width: 70%;
+        text-align: center;
+        margin: 0 auto;
+    }
+    /*Portfolio 3*/
+    .portfolio-page-3 #main-header h1{
+        font-size: 62px;
+    }
+    .product-col-2 .product-desc{
+        width: 100%;
+        margin: 0 auto;
+        padding: 0px;
+    }
+    /* Blog no sidebar*/
+    .blog-left-col{
+        width: 100%;
+        margin: 0 auto;
+    }
+    .blog-right-col{
+        width: 100%
+    }
+    .blog-page #main-header h1{
+        font-size: 62px;
+    }
+    /*blog sidebar*/
+    .blog-page-2 #main-header h1{
+        font-size: 62px;
+    }
+    .sidebar-container{
+        width: 35%;
+        margin-left: 28px;
+    }
+}
+@media(max-width: 768px){
+    /*NAVBAR*/
+    
+    .navigation-bar{
+        transform: none;
+        padding: 95px;
+        width: 28%;
+    }
+    .nav-list{
+        transform: none;
+    }
+    .top-nav-container{
+        transform: none;
+    }
+    .logo-square.nav-logo span{
+        position: relative;
+        white-space: nowrap;
+        left: -35px;
+    }
+    .skew-close{
+        transform: rotate(90deg);
+        left: -15px;
+        top: -100px;
+    }
+    .nav-list{
+        width: 93%;
+    }
+    .container,
+    .container_small{
+        width: 620px;
+    }
+    .container_large{
+        width: 620px;
+    }
+    
+    .item-right {
+    margin-left: 55px;
+    }
+    .item{
+        width: 80%;
+        margin-bottom: 200px;
+    }
+   
+    .center-col-wrapper{
+        padding: 20px 25px;
+    }
+    .footer-box span{
+        font-size: 12px;
+    }
+    /*Homepage da metter apposto, javascript non funziona e le 2 immagini alte sballano tutto??*/
+    
+    .item-bg{
+        max-height:  330px;
+    }
+    .item{
+        margin-bottom: 90px;
+        width: 80%;
+    }
+    .item-right{
+        margin-left: 60px;
+    }
+    /*portfolio*/
+    .portfolio-page-1 .titleWrapper{
+        display: block;
+    }
+    .single-portfolio #main-header h1{
+        font-size: 56px;
+    }
+    .single-portfolio #main-header h2{
+        font-size: 24px;
+    }
+    .single-portfolio #main-header .center-col-wrapper .fa-arrow-left,
+    .single-portfolio #main-header .center-col-wrapper .fa-arrow-right{
+        display: none;
+    }
+    .single-portfolio #main-header .center-col-wrapper span {
+    margin-top: 46px;
+    font-size: 15px;
+    display: inline-block;
+    }
+    .portfolio-item.right .titleWrapper{
+        right: 5px;
+    }
+    .portfolio-item.left .titleWrapper{
+        left: -75px;
+    }
+    .portfolio-page-3 .container {
+    width: 500px;
+    }
+    .portfolio-image-big,
+    .portfolio-image-small{
+        width: 100%;
+        box-shadow: 10px 0px 0px #ccc;
+    }
+    .product-col-2 .product-info{
+        width: 50%;
+    }
+    /*Blog*/
+    .blog-page.single-portfolio #main-header h1{
+        font-size: 46px;
+    }
+    .blog-page-2.single-portfolio #main-header h1{
+        font-size: 46px;
+    }
+    .blog-page-2 .blog-left-col{
+        width: 100%;
+    }
+    .sidebar-container{
+        width: 100%;
+        margin: 0 auto;
+    }
+    .p-small-col{
+        height: 150px;
+    }
+
+    /*Sidebar a scomparsa, possibile workaround, da finire, per adesso sidebar in display none/*
+    /*.sidebar-responsive-menu{
+        position: absolute;
+        top: 0px;
+        left: 10px;
+        height: 20px;
+        width: 50px;
+        background-color: black;
+        margin-top: 5px;
+        display: block;
+    }*/
+    
+    
+}
+@media(max-width: 560px){
+    .container,
+    .container_large,
+    .container_small{
+        width: 98%;
+        margin: 1%;
+    }
+    .container_large.footer-cont{
+        margin: 0 auto;
+    }
+    article .titleWrapper{
+        display: none;
+    }
+    .center-col-wrapper{
+        padding: 10px 25px;
+    }
+    .portfolio-item .titleWrapper{
+        display: none;
+    }
+    .portfolio-page-3 .container{
+        margin: 0 auto;
+    }
+    .blog-right-col{
+        margin-top: 70px;
+    }
+}
+@media(max-width: 480px){
+    .container,
+    .container_large,
+    .container_small{
+        width: 99%;
+        margin: 1%;
+    }
+    .container_large.footer-cont{
+        margin: 0 auto;
+        width: 99%;
+    }
+    .portfolio-page-3 .container{
+        width: 98%;
+        margin: 2%;
+    }
+    .header-triangle{
+        height: 25vh;
+    }
+    .header-box{
+        height: 60vh;
+    }
+    .single-portfolio #main-header .center-col-wrapper{
+        padding: 0px 50px;
+    }
+    .single-portfolio #main-header .center-col-wrapper span::after{
+        display: none;
+    }
+    .single-portfolio #main-header .center-col-wrapper span{
+        display: block;
+    }
+    .portfolio-page-1 .portfolio-item{
+        width: 100%;
+    }
+    .single-portfolio #main-header h1{
+        font-size: 51px;
+    }
+    .product-2-col-container{
+        width: 97%;
+    }
+    .nav-list{
+        width: 95%;
+    }
+    .right-col-wrapper{
+        padding: 15px;
+    }
+    .left-col{
+        width: 79%;
+    }
+    .skew-close{
+        left: 0px;
+    }
+    .portfolio-page-2 .container_large.footer-cont{
+        margin-top: 50px;
+    }
+    .blog-page-2 .blog-left-col{
+        width: 97%;
+    }
+    .sidebar-social-logos{
+        display: none;
+    }
+    .social-title{
+        display: none;
+    }
+    .logo-square.nav-logo span{
+        font-size: 20px;
+    }
+    .footer-logo{
+        margin: 5px auto;
+    }
+    .footer-box span{
+        font-size: 11px;
+    }
+    .footer-triangle{
+        display: none;
+    }
+}
+@media(max-width: 360px){
+    
+    #main-header h1{
+        font-size: 35px;
+    }
+    .titolo-2{
+        font-size: 30px;
+    }
+    #main-header h2{
+        font-size: 23px;
+    }
+    .header-box{
+        height:  40vh;
+    }
+    .header-triangle{
+        height: 15vh;
+    }
+    .navigation-bar{
+        width: 37%;
+    }
+    .logo-square.nav-logo span{
+        font-size: 18px;
+    }
+    .item-bg{
+        max-height: 200px;
+    }
+    .item{
+        margin-bottom: 20px;
+    }
+    .item-right{
+        margin-left: 50px;
+    }
+    .footer-box{
+        height: 29vh;
+        padding-bottom: 4vh;
+    }
+    .social-logos i{
+        font-size: 16px;
+    }
+    .footer-box span{
+        font-size: 15px;
+    }
+    .portfolio-item.right{
+        margin-left: 35px;
+    }
+    .product-col-2 .product-info{
+        width: 65%;
+    }
+    .single-portfolio #main-header h1{
+        font-size: 31px;
     }
 }

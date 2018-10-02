@@ -545,15 +545,6 @@ PAGINA PORTFOLIO
 }
 
 /*HEADER COLORE DIVERSO*/
-.portfolio-page-1 .header-triangle svg polygon{
-    fill: #7cd3ce;
-}
-.portfolio-page-2 .header-triangle svg polygon{
-    fill: #8ab6fc;
-}
-.portfolio-page-3 .header-triangle svg polygon{
-    fill: #FBDC2C;
-}
 .blog-page .header-triangle svg polygon{
     fill: #4BE5C3;
 }
