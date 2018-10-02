@@ -10,22 +10,31 @@
     $preview = get_field('preview');
     $colore_header = get_field('colore_header');
 
-    //ottengo la galleria
-    $immagine = get_field('immagine');    
-    $str1 = str_replace('>','#', str_replace('<','#',$immagine));
-    $str2 = str_replace('src="','**%%',$str1);
-    $str3 = str_replace('" class','%%**',$str2);
-                                        
-    $stringhe_grezze = explode('**', $str3);
-                        
-    $srcS = array();  
-    foreach($stringhe_grezze as $stringa){
-        if(stripos($stringa,'%%') !== false){
-            $srcS[] = str_replace('%%','',$stringa);
+    //ottengo Immagini e didascalie della galleria
+    function galleria($tipo){
+        $galleria = get_field('immagine');
+        if($tipo == 'immagini'){
+            $str1 = str_replace('>','#', str_replace('<','#',$galleria));
+            $str2 = str_replace('src="','**%%',$str1);
+            $str = str_replace('" class','%%**',$str2);
+        }else if($tipo == 'didascalie'){
+            $str = str_replace('</dt>','**%%', str_replace('</dl>','%%**',$galleria));
         }
+
+        $img_grezze = explode('**', $str);
+
+        $values = array();  
+        foreach($img_grezze as $stringa){
+            if(stripos($stringa,'%%') !== false){
+                $values[] = str_replace('%%','',$stringa);
+            }
+        }
+        return $values;
     }
-    
-    
+
+    $srcS = galleria('immagini');
+    $captionS = galleria('didascalie');
+
 ?>
 <div class="container portfolio-container">
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
@@ -33,6 +42,7 @@
 <div class="left-col">
    <?php 
     $x = 0;
+    $y = 0;
     foreach($srcS as $src): 
     if($x == 0){
         $direzione = 'right';
@@ -45,7 +55,7 @@
         <div class="titleWrapper">
             <div class="rotateWrapper">
                 <div class="rotate90">
-                    <span class="title">Cover</span>
+                    <span class="title"><?=$captionS[$y]?></span>
                 </div>
             </div>
         </div>
@@ -59,6 +69,7 @@
     }else{
         $x++;
     }
+    $y++;
     endforeach; ?>
 </div>
         

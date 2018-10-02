@@ -1,0 +1,96 @@
+/*@media(max-width: 1440px){
+RIDURRE CONTAINER, TO DO LIST.
+}*/
+
+@media(max-width: 1200px){
+    
+    /*Homepage + Navbar*/
+    .container_large{
+        width: 1000px;
+    }
+    
+    .container{
+        width: 925px;
+    }
+    .container_small{
+        width: 900px;
+    }
+    
+    .navigation-toggle{
+        right: -94px;
+    }
+    
+    .navigation-bar{
+        padding: 60px;
+    }
+    
+    .skew-close{
+        height: 0px;
+        width: 50%;
+    }
+    
+    .item-right{
+    margin-left: calc(50% - 15px);
+    }
+    
+    /*Portfolio 1*/
+    
+    .portfolio-page-1 .right-col{
+        margin-top: 20px;
+        width: 57%;
+    }
+    .portfolio-item.left{
+        margin-top: -60px;
+    }
+    
+    .portfolio-page-1 .portfolio-item{
+        width: 120%;
+    }
+    .blog-page #main-header .center-col-wrapper{
+        padding: 35px 90px;
+    }
+    .blog-right-col{
+        width: 43%;
+    }
+/*Portfolio 3*/
+
+.portfolio-page-3 .container{
+    width: 1000px;
+}
+/*Sidebar Blog*/
+.sidebar-container{
+    width: 28%;
+}
+.blog-page-2 #main-header .center-col-wrapper{
+    padding: 35px 90px;
+}
+/*PAGINA 404 Da fare, problematica*/
+/*______________________*/
+/*PAGINA CONTATTI*/
+.contact-triangle{
+    margin-top: -342px;
+}
+.contatti #main-header .header-box{
+    height: 51vh;
+}
+.contacts-container{
+    margin-top: -420px;
+}
+}
+@media(max-width: 1024px){
+    .container_large{
+        width: 700px;
+    }
+    .container{
+        width: 650px;
+    }
+    .header-box{
+        padding-top: 5vh;
+    }
+    #main-header h1{
+        font-size: 56px;
+    }
+    .navigation-bar{
+        padding: 70px;
+    }
+}

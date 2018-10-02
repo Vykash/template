@@ -9,6 +9,7 @@
 <link href="<?= get_template_directory_uri()?>/css/reset.css" rel="stylesheet">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_uri(); ?>" />
+<link href="<?= get_template_directory_uri()?>/css/style2.css" rel="stylesheet">
 
 <!-- Fonts -->
 <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
@@ -19,15 +20,15 @@
 <?php
     
     if(get_post_type() == 'portfolio'){
-        $id_header = 'portfolio-header';
+        $body_class = 'portfolio-page';
     }else{
-        $id_header = 'main-header';
+        $body_class = 'main-header';
     }
     
 ?>
 <body <?php body_class(); ?>>
 
-<header id="<?=$id_header?>">
+<header id="main-header">
         <div class="navigation-bar color_white">
             <div class="top-nav-container">
                 <div class="skew-close">
@@ -65,7 +66,7 @@
                 </nav>
             </div>
         </div>
-        <div class="header-box bg_pink">
+        <div class="header-box ">
             <div class="container_large">
                 <div class="small-col">
                     <div class="logo">
