@@ -19,13 +19,13 @@
 </head>
 
 <?php
-    
-    if(get_post_type() == 'portfolio'){
-        $body_class = 'portfolio-page';
-    }else{
-        $body_class = 'main-header';
+    /*Dati*/
+    $titolo = get_field('titolo');
+    if($titolo == '' || $titolo == NULL){
+        $titolo = get_the_title();
     }
-    
+    $sottotitolo = get_field('sottotitolo');
+    $colore_header = get_field('colore_header');
 ?>
 <body <?php body_class(); ?>>
 
@@ -67,20 +67,26 @@
                 </nav>
             </div>
         </div>
-        <div class="header-box  bg_pink">
+        <div class="header-box" style="background-color:<?=$colore_header?>">
             <div class="container_large">
                 <div class="small-col">
-                    <div class="logo">
+                    <a href="<?=get_site_url() ?>" class="logo">
                         QU<br>SQ
-                    </div>
+                    </a>
                     <div class="rotateWrapper">
                         <div class="rotate90 menu_items"><?php bloginfo('description') ?></div>
                     </div>
                 </div>
                 <div class="center-col">
                     <div class="center-col-wrapper">
-                        <h1></h1>
-                        <h2></h2>
+                        <h1><?=$titolo?></h1>
+                        <h2 class="color_white"><?=$sottotitolo?></h2>
+                        <?php if(get_post_type() == 'portfolio'){?>
+                        <div class="color_white">
+                            <span><a href="#"><i class="fas fa-arrow-left"></i>Previous Project</a></span>
+                            <span><a href="portfolio2.html">Next Project<i class="fas fa-arrow-right"></i></a></span>
+                        </div>
+                        <?php } ?>
                     </div>
                 </div>
                 <div class="small-col">
@@ -98,7 +104,7 @@
 
 
             <svg height="100%" width="100%">
-            <polygon points="0,0 500,0 0,210"/>
+            <polygon points="0,0 500,0 0,210" fill="<?=$colore_header?>"/>
                 Sorry, your browser does not support inline SVG
             </svg>
 

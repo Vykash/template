@@ -237,7 +237,7 @@ a:hover, a:active{
     
 }
 .header-triangle svg polygon{
-    fill: #f33176;
+    /* fill: #f33176; */
 }
 .small-col, .center-col{
     display: inline-block;
