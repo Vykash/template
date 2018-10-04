@@ -77,7 +77,7 @@
     <div class="right-col">
             <div class="right-col-wrapper">
                 <div class="textContainer">
-                    <div class="rightTitle">
+                    <div class="color_azure product-head">
                         <?=$frase?>
                     </div>
                 </div>
@@ -90,23 +90,23 @@
 
 
                 <div class="textContainer">
-                    <p class="rightTitle">Date</p>
+                    <p class="color_azure">Date</p>
                     <span><?=$date?></span>
                 </div>
                 <div class="textContainer">
-                    <p class="rightTitle">Clients</p>
+                    <p class="color_azure">Clients</p>
                     <span><?=$client?></span>
                 </div>
                 <div class="textContainer">
-                    <p class="rightTitle">Work Done</p>
+                    <p class="color_azure">Work Done</p>
                     <span><?=$work?></span>
                 </div>
                 <div class="textContainer">
-                    <p class="rightTitle">Preview Link</p>
+                    <p class="color_azure">Preview Link</p>
                     <span><a href="#"><?=$preview?></a></span>
                 </div>
                 <div class="textContainer">
-                    <p class="rightTitle">Category</p>
+                    <p class="color_azure"><?php _e('Category','qusq') ?></p>
                     <span>Illustration</span>
                 </div>
             </div>

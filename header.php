@@ -79,7 +79,8 @@
                 </div>
                 <div class="center-col">
                     <div class="center-col-wrapper">
-                        
+                        <h1></h1>
+                        <h2></h2>
                     </div>
                 </div>
                 <div class="small-col">
