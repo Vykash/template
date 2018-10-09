@@ -44,7 +44,7 @@ $(function(){
     
     /*background items*/
     function resizeGridItems(){
-        jQuery('.item').each(function(ind){
+        jQuery('.item a').each(function(ind){
             var imgH = jQuery(this).
             children('.pics-wrapper').children().height();
             var imgW = jQuery(this).children('.pics-wrapper').children().width();

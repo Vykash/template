@@ -67,7 +67,7 @@ return $count;
 }
 
 function create_post_type() {
-  register_post_type( 'Portfolio',
+  register_post_type( 'portfolio',
     array(
       'labels' => array(
         'name' => __( 'Portfolios' ),
