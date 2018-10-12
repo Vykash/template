@@ -74,10 +74,25 @@ function create_post_type() {
         'singular_name' => __( 'Portfolio' )
       ),
       'public' => true,
-      'taxonomies'  => array( 'category' ),
       'has_archive' => true,
       'supports' => array( 'title', 'editor', 'thumbnail', ),
     )
   );
 }
 add_action( 'init', 'create_post_type' );
+
+/**
+ * Register a private 'Genre' taxonomy for post type 'book'.
+ *
+ * @see register_post_type() for registering post types.
+ */
+function register_portfolio_cat() {
+    $args = array(
+        'label'        => __( 'Category portfolio', 'qusq' ),
+        'public'       => true,
+        'hierarchical' => true
+    );
+     
+    register_taxonomy( 'portfolio_cat', 'portfolio', $args );
+}
+add_action( 'init', 'register_portfolio_cat');
