@@ -63,5 +63,7 @@ $(function(){
         resizeGridItems();
     });
     
+    jQuery('#loader').fadeOut();
+    
     
 });
