@@ -439,7 +439,7 @@ a:hover, a:active{
     fill: #515151;
 }
 .footer-box{
-    height: 25vh;
+    height: 28vh;
     padding-bottom: 8vh;
     margin-top: -1px;
 }
@@ -594,24 +594,24 @@ PAGINA PORTFOLIO
     fill: #FBDC2C;
 }
 
-.page-404 .header-triangle svg polygon{
+.error404 .header-triangle svg polygon{
     fill: #E0534C;
 
 }
 
-.page-404 .footer-triangle svg{
+.error404 .footer-triangle svg{
     margin-top: 17px;
 }
 
-.page-404 #main-footer{
+.error404 #main-footer{
     margin-top: -392px;
 }
 
-.page-404 .center-col-wrapper h1 div{
+.error404 .center-col-wrapper h1 div{
     display: inline-block;
 }
 
-.page-404 .center-col-wrapper h2 div{
+.error404 .center-col-wrapper h2 div{
     display: inline-block;
 }
 

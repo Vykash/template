@@ -1,5 +1,5 @@
 <!--CONTENITORE IMMAGINI PRINCIPALI-->
-    <div class="container">
+    <div class="container" id="post-grid">
 <?php 
 
 $args = array(

@@ -26,13 +26,11 @@
                         <i class="fab fa-google-plus-g"></i>
                         <i class="fab fa-facebook-f"></i>
                     </div>
-                    <span class="copyright">
                     
-                        Qusq Pro <a href="javascript:void(0)">Theme</a>
-                        Proudly powered by <a href="javascript:void(0)">Wordpress</a>
-                        Created By <a href="javascript:void(0)">IshYoboy.com</a>
                     
-                    </span>
+                        <?php dynamic_sidebar('copyright')?>
+                    
+                    
                 </div>
                 <div class="f-small-col">
                     <div class="rotateWrapper">

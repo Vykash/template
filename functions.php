@@ -35,18 +35,29 @@ function blankslate_filter_wp_title( $title )
 {
 return $title . esc_attr( get_bloginfo( 'name' ) );
 }
+
+
 add_action( 'widgets_init', 'blankslate_widgets_init' );
-function blankslate_widgets_init()
-{
-register_sidebar( array (
-'name' => __( 'Sidebar Widget Area', 'qusq' ),
-'id' => 'primary-widget-area',
-'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-'after_widget' => "</li>",
-'before_title' => '<h3 class="widget-title">',
-'after_title' => '</h3>',
-) );
+function blankslate_widgets_init(){
+    register_sidebar( array (
+    'name' => __( 'Copyright', 'qusq' ),
+    'id' => 'copyright',
+    'before_widget' => '<span  id="%1$s" class="copyright %2$s">',
+    'after_widget' => "</span>",
+    'before_title' => '<h3 class="widget-title">',
+    'after_title' => '</h3>',
+    ) );
+    register_sidebar( array (
+    'name' => __( 'Sidebar blog', 'qusq' ),
+    'id' => 'blog-area',
+    'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
+    'after_widget' => "</li>",
+    'before_title' => '<h3 class="widget-title">',
+    'after_title' => '</h3>',
+    ) );
 }
+
+
 function blankslate_custom_pings( $comment )
 {
 $GLOBALS['comment'] = $comment;
@@ -66,6 +77,11 @@ return $count;
 }
 }
 
+
+
+
+
+
 function create_post_type() {
   register_post_type( 'portfolio',
     array(
@@ -74,6 +90,7 @@ function create_post_type() {
         'singular_name' => __( 'Portfolio' )
       ),
       'public' => true,
+      'taxonomies'  => array( 'category' ),
       'has_archive' => true,
       'supports' => array( 'title', 'editor', 'thumbnail', ),
     )
@@ -96,3 +113,47 @@ function register_portfolio_cat() {
     register_taxonomy( 'portfolio_cat', 'portfolio', $args );
 }
 add_action( 'init', 'register_portfolio_cat');
+
+
+remove_filter('the_content', 'wpautop');
+add_filter('the_content', 'wpautop', 12);
+
+add_shortcode('container','container');
+
+function container($parametro, $contenuto){
+    
+    $apri = '<div class="container">';
+    $chiudi = '</div>';
+    
+    $output = $apri.do_shortcode($contenuto).$chiudi;
+    return $output;
+}
+
+add_shortcode('col','col');
+
+function col($atts, $contenuto){
+    if(isset($atts['apri']) && !empty($atts['apri'])){
+        if($atts['apri'] == 'si'){
+            $apri = '<div class="row">';
+        }else{
+            $apri = '';
+        }
+    }
+    if(isset($atts['chiudi']) && !empty($atts['chiudi'])){
+        if($atts['chiudi'] == 'si'){
+            $chiudi = '</div>';
+        }else{
+            $chiudi = '';
+        }
+    }
+    if(isset($atts['col']) && !empty($atts['col'])){
+        $colonna = $atts['col'];
+    }else{
+        $colonna = '12';
+    }
+    
+    $contenuto= '<div class="col-sm-'.$colonna.'">'.do_shortcode(wpautop(trim($contenuto))).'</div>';
+    
+    $output = $apri.$contenuto.$chiudi;
+    return $output;
+}
