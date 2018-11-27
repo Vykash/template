@@ -58,7 +58,7 @@ $(function(){
             console.log('ok');
         });
     }
-    resizeGridItems();
+    //resizeGridItems();
     jQuery(window).on('resize',function(){
         resizeGridItems();
     });
