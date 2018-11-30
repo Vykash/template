@@ -1,4 +1,4 @@
-<?php get_template_part('inc/header-category','portfolio') ?>
+<?php get_template_part('inc/header-category') ?>
 
 
 <?php _e( 'Category Archives: ', 'qusq' ); ?><?php single_cat_title(); ?>

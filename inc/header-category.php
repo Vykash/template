@@ -20,7 +20,7 @@
 
 <?php
     /*Dati*/
-    $sottotitolo = get_field('sottotitolo');
+    $sottotitolo = category_description();
     $colore_header = '#4BE5C3';
 ?>
 <body <?php body_class(); ?>>
@@ -40,25 +40,6 @@
             </div>
             <div class="nav-list">
                 <nav class="navbar">
-                    <!-- <ul>
-                        <li><a href="index.html">Home</a></li>
-                    
-                        <li><a href="portfolio.html">.Portfolio</a></li>
-                    
-                        <li><a href="#">Blog</a></li>
-                    
-                        <li><a href="#">.Sample Pages</a></li>
-                    
-                        <li><a href="#">Shop</a></li>
-                    
-                        <li><a href="#">Contact</a></li>
-                    
-                        <li><a href="#">Language</a></li>
-                    
-                        <li><a href="#">Buy Now</a></li>
-                    
-                        <li><a href="#">Free</a></li>
-                    </ul> -->
                     <?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
                 </nav>
             </div>
@@ -77,7 +58,7 @@
                     <div class="center-col-wrapper">
                         <h1><?php single_cat_title() ?></h1>
                         <h2 class="color_white"><?=$sottotitolo?></h2>
-                        <?php if(get_post_type() == 'portfolio'){?>
+                        <?php if(get_post_type() == 'portfolio' && is_single()){?>
                         <div class="color_white">
                             <span><a href="#"><i class="fas fa-arrow-left"></i>Previous Project</a></span>
                             <span><a href="portfolio2.html">Next Project<i class="fas fa-arrow-right"></i></a></span>

@@ -65,5 +65,16 @@ $(function(){
     
     jQuery('#loader').fadeOut();
     
+    jQuery(document).on('scroll',function(){
+        var top = jQuery(document).scrollTop();
+        console.log('scroll');
+        if(top >= 450){
+            var sfondo = jQuery('.header-box').css('background-color');
+            jQuery('.small-col').addClass('fixed-small-col').css('background-color',sfondo);
+        }else{
+            var sfondo = jQuery('.header-box').css('background-color');
+            jQuery('.small-col').removeClass('fixed-small-col').css('background-color',sfondo);
+        }
+    })
     
 });

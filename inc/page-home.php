@@ -93,20 +93,16 @@ $y = 0;
 wp_reset_postdata();
         
 ?>
-        <div id="new-posts"></div>
+       
+        <button id="loadMore" class="standard_btn" style="background-color:<?php the_field('colore_header') ?>;">Carica altro</button>
     </div>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <button id="loadMore">carica</button>
         
         <script>
             jQuery(document).on('ready',function(){
                 var page = 2;
                 var nPost = jQuery('#post-grid .item').length;
                 jQuery('#loadMore').on('click',function(){
+                    jQuery('#loadMore').animate({marginTop:'1000px'},500);
                     //jQuery('#new-posts').load('<?=get_site_url()?>/page/<?=$current_page+1?> #post-grid .item');
                     //resizeGridItems();
                     
@@ -126,7 +122,7 @@ wp_reset_postdata();
                             if(el.length > 0){
                                 el.appendTo('#post-grid');
                             }else{
-                                alert('non ci sono altri post');
+                                jQuery('#loadMore').off().text('non ci sono altri post');
                             }
                             nPost = jQuery('#post-grid .item').length;
                             console.log(nPost);
@@ -134,11 +130,12 @@ wp_reset_postdata();
                             
                             setInterval(function(){
                                 jQuery('.item.nascosto').eq(xx).animate({opacity:1},500,function(){
-                                    jQuery('.item.nascosto').removeClass('nascosto');
+                                    //jQuery('.item.nascosto').removeClass('nascosto');
+                                    jQuery('#loadMore').appendTo('#post-grid').animate({marginTop:'0px'},1200);
                                 });
                                 
                                 xx++;
-                            },300);
+                            },500);
                             
                         },
                         error: function(data){
