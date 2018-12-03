@@ -309,6 +309,7 @@ a:active {
     height: 250px;
     width: 70px;
     padding: 13px;
+    z-index: 1000;
 }
 .fixed-small-col.small-col:last-of-type{
     height: 53px;
@@ -695,7 +696,7 @@ PAGINA PORTFOLIO
 /*CONTENITORE PRINCIPALE*/
 
 .portfolio-container {
-    margin-top: -180px;
+    margin-top: -115px;
 }
 
 /*HEADER COLORE DIVERSO*/
@@ -1490,4 +1491,10 @@ textarea {
 .search-result-right {
     width: 100%;
     margin-bottom: 90px;
+}
+
+.portfolio-nav {
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1000;
 }

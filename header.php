@@ -82,12 +82,24 @@
                     <div class="center-col-wrapper">
                         <h1><?=$titolo?></h1>
                         <h2 class="color_white"><?=$sottotitolo?></h2>
+                        <!--Troviamo i post precedenti e successivi-->
+                        <?php
+                            $postArray = array();
+             
+                            $portfolios = get_posts( array( 'post_type' => 'portfolio') );
+                            foreach($portfolios as $portfolio) :
+                                $postArray[] = $portfolio -> post_title;
+                            endforeach;
+                            
+                            
+                            ?>     
                         <?php if(get_post_type() == 'portfolio'){?>
-                        <div class="color_white">
+                        <div class="color_white portfolio-nav">
                             <span><a href="#"><i class="fas fa-arrow-left"></i>Previous Project</a></span>
-                            <span><a href="portfolio2.html">Next Project<i class="fas fa-arrow-right"></i></a></span>
+                            <span><a href="#">Next Project<i class="fas fa-arrow-right"></i></a></span>
                         </div>
                         <?php } ?>
+                       
                     </div>
                 </div>
                 <div class="small-col">
