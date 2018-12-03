@@ -93,10 +93,69 @@
                             
                             
                             ?>     
-                        <?php if(get_post_type() == 'portfolio'){?>
+                        <?php if(get_post_type() == 'portfolio' && is_single()){?>
                         <div class="color_white portfolio-nav">
-                            <span><a href="#"><i class="fas fa-arrow-left"></i>Previous Project</a></span>
-                            <span><a href="#">Next Project<i class="fas fa-arrow-right"></i></a></span>
+                            <?php if(have_posts()){
+                                while(have_posts()){
+                            the_post()?>
+                            <span>
+                            <?php
+                                //var_dump(get_next_post_link('%link','%title<i class="fas fa-arrow-right"></i>',false,'none','portfolio_cat'));
+                                if( get_previous_post_link('%link','<i class="fas fa-arrow-left"></i>%title',false,'none','portfolio_cat') != ''){
+                                   //echo 'primo---';
+                                    echo get_previous_post_link('%link','<i class="fas fa-arrow-left"></i>%title',false,'none','portfolio_cat');
+                                }else{
+                                    //echo 'secondo---';
+                                    $nextLink = new WP_Query(array(
+                                        'posts_per_page' => 1,
+                                        'post_type' => 'portfolio',
+                                        'taxonomy' => 'portfolio_cat',
+                                        'order' => 'DESC'
+                                    ));
+                                    if($nextLink->have_posts()){
+                                        while($nextLink->have_posts()){
+                                            $nextLink->the_post();
+                                            echo '<a href="'.get_permalink().'"><i class="fas fa-arrow-left"></i>'.get_the_title().'</a>';
+                                        }
+                                    }
+                                    //wp_reset_query();
+                                    wp_reset_postdata();
+                                }
+                                ?>
+                            
+                            
+                            </span>
+                            <span>
+                            
+                            <?php
+                                //var_dump(get_next_post_link('%link','%title<i class="fas fa-arrow-right"></i>',false,'none','portfolio_cat'));
+                                if( get_next_post_link('%link','%title<i class="fas fa-arrow-right"></i>',false,'none','portfolio_cat') != ''){
+                                   echo 'primo---';
+                                    echo get_next_post_link('%link','%title<i class="fas fa-arrow-right"></i>',false,'none','portfolio_cat');
+                                }else{
+                                    echo 'secondo---';
+                                    $nextLink = new WP_Query(array(
+                                        'posts_per_page' => 1,
+                                        'post_type' => 'portfolio',
+                                        'taxonomy' => 'portfolio_cat',
+                                        'order' => 'ASC',
+                                        
+                                    ));
+                                    if($nextLink->have_posts()){
+                                        while($nextLink->have_posts()){
+                                            $nextLink->the_post();
+                                            echo '<a href="'.get_permalink().'">'.get_the_title().'<i class="fas fa-arrow-right"></i></a>';
+                                        }
+                                    }
+                                    //wp_reset_query();
+                                    wp_reset_postdata();
+                                }
+                                ?>
+                            
+                            
+                            </span>
+                            <?php }
+                                }?>
                         </div>
                         <?php } ?>
                        
