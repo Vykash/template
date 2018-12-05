@@ -130,10 +130,10 @@
                             <?php
                                 //var_dump(get_next_post_link('%link','%title<i class="fas fa-arrow-right"></i>',false,'none','portfolio_cat'));
                                 if( get_next_post_link('%link','%title<i class="fas fa-arrow-right"></i>',false,'none','portfolio_cat') != ''){
-                                   echo 'primo---';
+                                   //echo 'primo---';
                                     echo get_next_post_link('%link','%title<i class="fas fa-arrow-right"></i>',false,'none','portfolio_cat');
                                 }else{
-                                    echo 'secondo---';
+                                    //echo 'secondo---';
                                     $nextLink = new WP_Query(array(
                                         'posts_per_page' => 1,
                                         'post_type' => 'portfolio',
