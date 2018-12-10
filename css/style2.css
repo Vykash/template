@@ -173,9 +173,13 @@ a:active {
     cursor: pointer;
 }
 
+.menu-menu-1-container {
+    width: 100%;
+}
+
 .f-small-col .rotate90 div:hover {
     color: #f33176;
-    ;
+    
 }
 
 .f-small-col .rotate90:hover {
@@ -303,6 +307,9 @@ a:active {
 .small-col {
     width: 50px;
     color: #fff;
+    transition: all .3s ease-in-out;
+    height: 350px;
+   
 }
 .fixed-small-col.small-col {
     position: fixed;
@@ -310,6 +317,16 @@ a:active {
     width: 70px;
     padding: 13px;
     z-index: 1000;
+}
+
+.fixed-small-col.small-col .logo{
+    margin-bottom: 20px;
+}
+
+.fixed-small-col.small-col .menu-toggle{
+    font-size: 50px;
+    transition: all .3s ease-in-out;
+    
 }
 .fixed-small-col.small-col:last-of-type{
     height: 53px;
@@ -333,7 +350,8 @@ a:active {
 }
 
 .logo {
-    width: 50px;
+    width: 100%;
+    display: block;
     height: 50px;
     font-size: 30px;
     text-align: center;
@@ -349,7 +367,7 @@ a:active {
     right: -800px;
     background-color: #515151;
     position: fixed;
-    z-index: 100;
+    z-index: 9999;
     padding: 30px;
     transform: skewX(10deg);
     transition: all 0.6s ease-in-out;
@@ -1082,6 +1100,7 @@ SECONDA PAGINA PORTFOLIO
 
 .blog-post img {
     max-width: 100%;
+    height: auto;
     box-shadow: 10px 10px 0px #ccc;
 }
 
