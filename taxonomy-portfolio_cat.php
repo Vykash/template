@@ -15,7 +15,7 @@
     
     if($pari == 1){
     
-    echo $pari;
+    //echo $pari;
     ?>
 
        <article class="blog-post">

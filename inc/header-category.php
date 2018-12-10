@@ -23,7 +23,7 @@
     $sottotitolo = category_description();
     $colore_header = '#4BE5C3';
 ?>
-<body <?php body_class(); ?>>
+<body <?php body_class('single-portfolio blog-page'); ?>>
 
 <header id="main-header">
         <div class="navigation-bar color_white">
@@ -55,7 +55,29 @@
                     </div>
                 </div>
                 <div class="center-col">
-                    <div class="center-col-wrapper">
+                   <div class="center-col-wrapper color_white">
+                        <h1>A few
+                            <div class="color_black">maybe</div><br>
+                            <div class="color_black">intresting</div> stories
+
+                        </h1>
+                        <h2 class="color_white">From <?php single_cat_title() ?></h2>
+                        <div class="color_white">
+                           <?php $n = get_posts(array(
+                                        'post_type'=>'portfolio',
+                                        'posts_per_page'=>'-1',
+                                        'tax_query' => array( 
+                                            array( 
+                                                'taxonomy' => 'portfolio_cat', //or tag or custom taxonomy
+                                                'field' => 'name', 
+                                                'terms' => single_cat_title('',false) 
+                                            ),
+                                        )
+                                    )); ?>
+                            <span><?=count($n)?> posts here</span>
+                        </div>
+                    </div>
+                    <!-- <div class="center-col-wrapper">
                         <h1><?php single_cat_title() ?></h1>
                         <h2 class="color_white"><?=$sottotitolo?></h2>
                         <?php if(get_post_type() == 'portfolio' && is_single()){?>
@@ -64,7 +86,7 @@
                             <span><a href="portfolio2.html">Next Project<i class="fas fa-arrow-right"></i></a></span>
                         </div>
                         <?php } ?>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="small-col">
                     <div class="menu-toggle fas fa-bars"></div>
